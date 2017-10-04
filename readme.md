@@ -1,2 +1,2 @@
 # Peter Casey
-## A bit lost
+## Getting the hang of Git and loving it!
