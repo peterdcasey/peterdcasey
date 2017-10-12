@@ -9,7 +9,7 @@ function centerCanvas() {
 function setup() {
   cnv = createCanvas(600, 600);
   centerCanvas();
-  background(255, 0, 200);
+  background(255, 200, 200);
 }
 
 function windowResized() {
