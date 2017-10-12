@@ -1,14 +1,23 @@
-function setup() {
-  createCanvas(640, 480);
-  fill(240,240,240);
-  rect(0,0,width,height);
+var cnv;
+
+function centerCanvas() {
+  var x = (windowWidth - width) / 2;
+  var y = (windowHeight - height) / 2;
+  cnv.position(x, y);
 }
 
-var oldX;
-var oldY;
+function setup() {
+  cnv = createCanvas(600, 600);
+  centerCanvas();
+  background(255, 0, 200);
+}
+
+function windowResized() {
+  centerCanvas();
+}
 
 function draw() {
-  if (mouseX !== oldX || mouseY !== oldY) {
+  if (mouseX !== pmouseX || mouseY !== pmouseY) {
     if (mouseIsPressed) {
       fill(0);
     }
@@ -17,6 +26,4 @@ function draw() {
     }
   }
   ellipse(mouseX, mouseY, 80, 80);
-  oldX = mouseX;
-  oldY = mouseY;
 }
