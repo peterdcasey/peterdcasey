@@ -1,15 +1,28 @@
+/*
+  Sample Sketch
+*/
+
+var cnv;
+
 function setup() {
-  createCanvas(640, 480);
-  fill(240,240,240);
-  rect(0,0,width,height);
+  cnv = createCanvas(800, 600);
+  centerCanvas();
+  background(240, 240, 240);
 }
 
-var oldX;
-var oldY;
+function centerCanvas() {
+  var x = (windowWidth - width) / 2;
+  var y = (windowHeight - height) / 2;
+  cnv.position(x, y);
+}
+
+function windowResized() {
+  centerCanvas();
+}
 
 function draw() {
-  if (mouseX !== oldX || mouseY !== oldY) {
-    if (mouseIsPressed) {
+    if (mouseX !== pmouseX || mouseY !== pmouseY) {
+      if (mouseIsPressed) {
       fill(0);
     }
     else {
@@ -17,6 +30,4 @@ function draw() {
     }
   }
   ellipse(mouseX, mouseY, 80, 80);
-  oldX = mouseX;
-  oldY = mouseY;
 }
