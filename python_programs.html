@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Python Programs</title>
+    </head>
+<body>
+
+<h1>Day of Week Returning</h1>
+
+<textarea rows="30" cols="90">
+# Asks for a stating day of the week
+# Returns that day as a str
+def get_day_leaving():
+    print('Enter a day of the week you plan to leave... i.e. "Monday"')
+    userInput  = input('Please enter a day of the week: ')
+    day = userInput.lower()
+    return day
+    
+# Takes the starting day from the user and finds it in "week"
+# Returns the index value of position in "week" 
+def get_day_index(week, starting_day_result):
+    dayIndex = week.index(starting_day_result)
+    return dayIndex
+    
+# Asks for how many days to be gone
+# Returns the int
+def get_days_gone():
+    userInput = input('How many days will you be gone?: ')
+    daysGone = int(userInput)
+    return daysGone
+    
+# Adds the starting day index value from "week" with the amount of days to be gone
+# Return the total
+def add_days(index_result, days_gone_result):
+    startToEnd = index_result + days_gone_result
+    return startToEnd
+    
+# Input the total days gone
+# Return the day of the week returning
+def day_coming_back(week, days_gone):
+    dayBack = days_gone % len(week)
+    weekday_back = week[dayBack].capitalize()
+    return weekday_back 
+    
+# Main Program
+def main_program():
+    #Days of the week
+    week = ['sunday', 'monday', 'tuesday', 'wednesday',
+            'thursday', 'friday', 'saturday']
+
+    leaving_day = get_day_leaving() # starting day
+    leaving_day_index = get_day_index(week, leaving_day) # index value
+    days_gone = get_days_gone() # days gone
+    start_to_end = add_days(leaving_day_index, days_gone) # total of index and days gone
+    day_back = day_coming_back(week, start_to_end)
+    print('You will be back on a ' + day_back)
+
+main_program()
+</textarea>
+
+</body>
+</html> 

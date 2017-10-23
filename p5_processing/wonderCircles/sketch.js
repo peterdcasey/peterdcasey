@@ -22,7 +22,7 @@ function draw() {
       fill(0,255,0);
     }
     else {
-      fill(random(100),random(100),random(100));
+      fill(random(250),random(200),random(100));
     }
   }
   rect(mouseX, mouseY, 80, 80);
