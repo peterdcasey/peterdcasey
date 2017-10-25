@@ -17,6 +17,13 @@ function windowResized() {
 }
 
 function draw() {
-  fill(30,40,200);
-  rect(30, 50, 100, 200);
+  if (mouseX !== pmouseX || mouseY !== pmouseY) {
+    if (mouseIsPressed) {
+      fill(0);
+    }
+    else {
+      fill(random(256),random(256),random(256));
+    }
+  }
+  ellipse(mouseX, mouseY, 80, 80);
 }

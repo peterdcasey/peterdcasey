@@ -17,6 +17,11 @@ function windowResized() {
 }
 
 function draw() {
-  fill(30,40,200);
-  rect(30, 50, 100, 200);
+  fill(130,140,200, 100);
+
+  for (let x = 10; x <= 200; x += 10) {
+    fill(x + 30, x * 5, x * 10, 100);
+    rect(x, x + 5, x * 5, 200);
+  }
+
 }
