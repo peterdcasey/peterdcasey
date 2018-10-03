@@ -1,0 +1,13 @@
+h1 {
+    color: blueviolet;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-right: 150px;
+    margin-left: 150px;
+
+    border: 3px solid rgb(76, 139, 175);
+}
+
+a {
+    color: rgb(226, 43, 43);    
+}
