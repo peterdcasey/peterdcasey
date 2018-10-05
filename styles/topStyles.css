@@ -1,11 +1,25 @@
 li {
     font-size: 18px;
-    color: rgb(255, 0, 55);
+    color: rgb(43, 163, 27);
     font-weight: bold;
 }
 
 h1 {
-    font-size: 18px;
-    color: rgb(255, 0, 55);
+    font-size: 28px;
+    color: rgb(29, 146, 45);
     font-weight: bold;
 }
+
+.gradient {
+
+    /* can be treated like a fallback */
+    background-color: red;
+  
+    /* will be "on top", if browser supports it */
+    background-image: linear-gradient(red, orange);
+  
+    /* these will reset other properties, like background-position, but it does know what you mean */
+    background: red;
+    background: linear-gradient(red, orange);
+  
+  }
