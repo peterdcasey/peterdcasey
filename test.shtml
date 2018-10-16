@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<title>Portfolio</title>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="/styles/topStyles.css">
+</head>
+
+<body>
+
+<div class="gradient">
+<h1>Peter Casey Testing 123...</h1>
+<p>This is only a test...</p>
+</div>;
+
+<div>
+    Testing 123
+</div>
+<!--#include file="footer.html" -->
+</body>
+</html>
+
+
