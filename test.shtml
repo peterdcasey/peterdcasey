@@ -11,12 +11,12 @@
 <div class="gradient">
 <h1>Peter Casey Testing 123...</h1>
 <p>This is only a test...</p>
-</div>;
+</div>
 
 <div>
     Testing 123
 </div>
-<!--#include file="footer.html" -->
+<!--#include virtual="footer.html" -->
 </body>
 </html>
 
