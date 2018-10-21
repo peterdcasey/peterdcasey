@@ -23,11 +23,11 @@ function windowResized() {
 function draw() {
     if (mouseX !== pmouseX || mouseY !== pmouseY) {
       if (mouseIsPressed) {
-      fill(0);
+        fill(0);
+      }
+      else {
+        fill(random(256),random(256),random(256));
+      }
     }
-    else {
-      fill(random(256),random(256),random(256));
-    }
-  }
   ellipse(mouseX, mouseY, 80, 80);
 }
