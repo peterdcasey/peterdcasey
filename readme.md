@@ -1,3 +1,3 @@
 # Peter Casey
 ## Getting the hang of Git and loving it!
-### Maybe not yet!
+### Simple at first, deeper as you wade in.
