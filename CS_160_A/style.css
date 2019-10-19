@@ -1,0 +1,13 @@
+body {
+    background-color: linen;
+    padding-top: 3.5rem;
+  }
+  
+h1 {
+    color: maroon;
+    margin-left: 40px;
+  } 
+
+p {
+      font-size: 30pt;
+  }
