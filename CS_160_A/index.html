@@ -18,7 +18,44 @@
   </head>
 
   <body>
-    <h1>CS 160 Portfolio 1</h1>
+      <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ce6c2a;">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Dropdown
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="processing/index.html">Processing</a>
+                  <a class="dropdown-item" href="../index_old.html">Old Top Level</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+              </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+          </div>
+        </nav>
+
+
+    <h1>CS 160 <a href="http://www.cocc.edu" data-toggle="tooltip" title="" data-original-title="Jump to COCC">Portfolio 1</a></h1>
 
     <div class="container-fluid" style="background-color: rgb(217, 238, 158); text-align: center">
       <span class="glyphicon glyphicon-home"></span> Go Home</a>Fluid container - <a href="guessing_game.html">Guessing Game</a>
@@ -36,11 +73,36 @@
         <div class="row" style="border: 1px solid rgba(255, 0, 21, 0.664)" >
             <div class="col">
             1 of 3
+
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Processing Programs
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="http://www.cocc.edu">COCC</a>
+                <a class="dropdown-item" href="processing/first_project/index.html">First Program</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </div>
+
             </div>
             <div class="col" style="background-color: rgba(162, 243, 56, 0.5);">
               <a href="processing/index.html">Processing</a>
             </div>
             <div class="col">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" 
+                            id="dropdownMenuButton" data-toggle="dropdown" 
+                            aria-haspopup="true" aria-expanded="false">
+                      Processing Programs
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" href="http://www.cocc.edu">COCC</a>
+                      <a class="dropdown-item" href="processing/first_project/index.html">First Program</a>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                  </div>
+      
                <a href="./skulpt/index.html">Skulpt</a>
             </div>
         </div>
@@ -66,6 +128,11 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
             integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
             crossorigin="anonymous">
+    </script>
+    <script>
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+    })
     </script>
   </body>
 
