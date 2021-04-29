@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.17.0/full/pyodide.js"></script>
+</head>
+
+<body>
+  <p>You can execute one line Python code. Just enter something in the box below, click the button or *enter*</enter>.</p>
+  <input id='code' value='sum([1, 2, 3, 4, 5])'>
+  <button id="run" onclick='evaluatePython()'>Run</button>
+
+  <br>
+  <br>
+  <div>
+    Output:
+  </div>
+  <textarea id='output' style='width: 50%;' rows='20' disabled></textarea>
+  <br>
+  <button id="clear" onclick='document.getElementById("output").value=""'>Clear</button>
+  <a href="https://pyodide.org/en/stable/#">Found @ Pyodide</a>
+
+  <script>
+    const output = document.getElementById("output");
+    const code = document.getElementById("code");
+
+    code.addEventListener("keyup", function(event) {
+    // Number 13 is the "Enter" key on the keyboard
+        if (event.keyCode === 13) {
+            // Cancel the default action, if needed
+            event.preventDefault();
+            // Trigger the button element with a click
+            document.getElementById("run").click();
+        }
+    }); 
+
+    function addToOutput(s) {
+      //output.value = '';
+      //alert("["+s+"]");
+      x = "" + s;  // convert s to a string
+
+      if (x.includes("undefined")) {
+        let x = code.value.indexOf("=");  // assume assignment, look for '='
+
+        if (x == -1) {  // not assignment
+            output.value += '>>>' + code.value + '\n';
+            code.value = "";
+        }
+        else {  // assignment
+            code.value = code.value.slice(0, x);     // get variable name
+            evaluatePython();                        // evaluate the variable
+        }
+      }
+      else {
+        output.value += '>>>' + code.value + '\n' + s + "\n";
+        code.value = "";
+      }
+    }
+
+    output.value = 'Initializing...\n';
+    // init Pyodide
+    async function main(){
+      await loadPyodide({ indexURL : 'https://cdn.jsdelivr.net/pyodide/v0.17.0/full/' });
+      output.value += 'Ready!\n';
+    }
+    let pyodideReadyPromise = main();
+
+    async function evaluatePython() {
+      await pyodideReadyPromise;
+      try {
+        let output = await pyodide.runPythonAsync(code.value);
+        addToOutput(output);
+      } catch(err) {
+        addToOutput(err);
+      }
+    }
+  </script>
+</body>
+
+</html>
